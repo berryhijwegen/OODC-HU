@@ -1,7 +1,7 @@
 package inleveropdrachten.opdracht2a;
 
 public class Main {
-    public static void main(String[] arg) {
+    public static void main(String[] args) {
         Zwembad z1 = new Zwembad(2.0, 5.5, 1.5);
         System.out.println("BREEDTE: " + z1.getBreedte());
         System.out.println("LENGTE: " + z1.getLengte());

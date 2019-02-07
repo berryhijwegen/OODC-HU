@@ -14,7 +14,7 @@ public class Zelfstudie1 {
 
     public void whileLoop(){
         // Opdracht 2
-        int i = 0;
+        int i = 1;
         while(i < 11){
             System.out.println(i);
             i++;

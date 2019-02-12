@@ -14,11 +14,15 @@ public class Rekening {
     }
 
     public void stort(double bedrag){
-        saldo += bedrag;
+        if (bedrag > 0) {
+            saldo += bedrag;
+        }
     }
 
     public void neemOp(double bedrag){
-        saldo -= bedrag;
+        if(bedrag > 0){
+            saldo -= bedrag;
+        }
     }
 
     public String toString(){

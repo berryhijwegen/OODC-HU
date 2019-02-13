@@ -1,2 +1,2 @@
 # OODC-HU
-This repo contains elaborations of the exercises from OODC, Hogeschool Utrecht.
+This repository contains elaborations of the exercises from OODC, Hogeschool Utrecht.

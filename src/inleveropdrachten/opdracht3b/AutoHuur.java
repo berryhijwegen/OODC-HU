@@ -31,12 +31,12 @@ public class AutoHuur {
         aantalDagen = antldgn;
     }
 
-    public double totaleKosten(Auto ghrdauto, Klant hrdr) {
-        return (aantalDagen * ghrdauto.GetPrijs()) * ((100 - hrdr.getKorting()) * 0.01);
+    private double totaleKosten() {
+        return (aantalDagen * gehuurdeAuto.GetPrijs()) * ((100 - huurder.getKorting()) * 0.01);
     }
 
     public String toString() {
-        if (gehuurdeAuto == null || huurder == null || aantalDagen == 0) {
+        if (gehuurdeAuto == null || huurder == null) {
             String s = "";
             if (gehuurdeAuto == null) {
                 s += "  er is geen auto bekend\n  ";
@@ -48,14 +48,10 @@ public class AutoHuur {
             } else {
                 s += String.format("op naam van: %s\n  ", huurder);
             }
-            if (aantalDagen == 0) {
-                s += "aantal dagen: 0 en dat kost 0.0\n";
-            } else {
-                s += String.format("aantal dagen: %d en dat kost €%.2f", aantalDagen, totaleKosten(gehuurdeAuto, huurder));
-            }
+            s += String.format("aantal dagen: %d en dat kost 0.0", aantalDagen);
             return s;
         } else {
-            return String.format("  autotype: %s\n  op naam van: %s\n  aantal dagen: %d en dat kost €%.2f", gehuurdeAuto, huurder, aantalDagen, totaleKosten(gehuurdeAuto, huurder));
+            return String.format("  autotype: %s\n  op naam van: %s\n  aantal dagen: %d en dat kost €%.2f", gehuurdeAuto, huurder, aantalDagen, totaleKosten());
         }
     }
 }

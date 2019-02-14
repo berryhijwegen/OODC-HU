@@ -2,9 +2,9 @@ package inleveropdrachten.opdracht2b;
 
 public class Voetbalclub{
     private String naam;
-    private int aantalGewonnen = 0;
-    private int aantalGelijk = 0;
-    private int aantalVerloren = 0;
+    private int aantalGewonnen;
+    private int aantalGelijk;
+    private int aantalVerloren;
 
     public Voetbalclub(String nm){
         naam = nm;

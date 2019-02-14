@@ -2,7 +2,7 @@ package inleveropdrachten.opdracht3b;
 
 public class Klant {
     private String naam;
-    private Double korting;
+    private double korting;
 
     public Klant(String nm){
         naam = nm;
@@ -22,11 +22,6 @@ public class Klant {
     }
 
     public String toString(){
-        if (korting == null){
-            return  String.format("%s (korting: 0.0%)", naam);
-        }
-        else {
-            return  String.format("%s (korting: %.2f%%)", naam, korting);
-        }
+        return  String.format("%s (korting: %.2f%%)", naam, korting);
     }
 }

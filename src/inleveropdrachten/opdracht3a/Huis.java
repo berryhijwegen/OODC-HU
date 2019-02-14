@@ -18,6 +18,6 @@ public class Huis {
         return huisbaas;
     }
     public String toString(){
-        return String.format("Huis %s is gebouwd in %d\nen heeft huisbaas %s", adres, bouwjaar, (Object) huisbaas);
+        return String.format("Huis %s is gebouwd in %d\nen heeft huisbaas %s", adres, bouwjaar, huisbaas);
     }
 }

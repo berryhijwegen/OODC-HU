@@ -18,26 +18,24 @@ public class Persoon {
     }
 
     public boolean koop(Game g){
-        for (Game game : mijnGames) {
-            if (g.toString().equals(game.toString())){
-                return false;
-            }
+        boolean result = false;
+        if(mijnGames.contains(g)){
+            return result;
         }
         if (budget >= g.huidigeWaarde()){
             budget -= g.huidigeWaarde();
             mijnGames.add(g);
-            return true;
+            result = true;
         }
         else{
-            return false;
+            result = false;
         }
+        return result;
     }
 
     public boolean verkoop(Game g, Persoon koper) {
-        for (Game game : mijnGames) {
-            if (g.toString().equals(game.toString())) {
-                return koper.koop(g);
-            }
+        if(mijnGames.contains(g)){
+            return koper.koop(g);
         }
         return false;
     }

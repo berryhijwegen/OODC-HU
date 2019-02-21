@@ -21,6 +21,17 @@ public class Game {
         return nieuwprijs * Math.pow(0.7, LocalDate.now().getYear() - releaseJaar);
     }
 
+    public boolean equals(Object anderObject){
+        if(anderObject instanceof Game){
+            Game gameObject = (Game) anderObject;
+            if (gameObject.naam.equals(this.naam)){
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
     public String toString(){
         return String.format("      %s, uitgegeven in %d; nieuwprijs: %.2f nu voor: %.2f", naam, releaseJaar, nieuwprijs, huidigeWaarde());
     }

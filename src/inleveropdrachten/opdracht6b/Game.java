@@ -24,7 +24,7 @@ public class Game {
     public boolean equals(Object anderObject){
         if(anderObject instanceof Game){
             Game gameObject = (Game) anderObject;
-            if (gameObject.naam.equals(this.naam)){
+            if (gameObject.naam.equals(this.naam) && gameObject.releaseJaar == this.releaseJaar && gameObject.nieuwprijs == this.nieuwprijs){
                 return true;
             }
             return false;

@@ -11,7 +11,6 @@ public class BedrijfsInventaris {
         budget = bud;
     }
     public void schafAan(Goed goed){
-        ;
         if (goed.huidigeWaarde() < budget && !alleGoederen.contains(goed)){
             budget-= goed.huidigeWaarde();
             alleGoederen.add(goed);

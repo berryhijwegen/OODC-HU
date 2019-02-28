@@ -18,23 +18,19 @@ public class Persoon {
 
     public boolean koop(Game g){
         boolean result = false;
-        if(mijnGames.contains(g)){
-            return result;
-        }
-        if (budget >= g.huidigeWaarde()){
+        if(!mijnGames.contains(g) && budget >= g.huidigeWaarde()) {
             budget -= g.huidigeWaarde();
             mijnGames.add(g);
             result = true;
-        }
-        else{
-            result = false;
         }
         return result;
     }
 
     public boolean verkoop(Game g, Persoon koper) {
-        if(mijnGames.contains(g)){
-            return koper.koop(g);
+        if (mijnGames.contains(g) && koper.koop(g)){
+            mijnGames.remove(g);
+            budget += g.huidigeWaarde();
+            return true;
         }
         return false;
     }
@@ -45,5 +41,14 @@ public class Persoon {
             s+= game + "\n";
         }
         return s;
+    }
+
+    public Game zoekGameOpNaam(String g){
+        for(Game game : mijnGames){
+            if (game.getNaam().equals(g)){
+                return game;
+            }
+        }
+        return null;
     }
 }

@@ -34,8 +34,12 @@ public class Persoon {
     }
 
     public boolean verkoop(Game g, Persoon koper) {
-        if(mijnGames.contains(g)){
-            return koper.koop(g);
+        if (mijnGames.contains(g)) {
+            if (koper.koop(g)) {
+                mijnGames.remove(g);
+                budget += g.huidigeWaarde();
+                return true;
+            }
         }
         return false;
     }

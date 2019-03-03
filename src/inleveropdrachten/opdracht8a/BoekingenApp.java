@@ -1,4 +1,5 @@
 package inleveropdrachten.opdracht8a;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,7 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-public class BoekingenApp extends Application implements EventHandler<ActionEvent>{
+public class BoekingenApp extends Application{
     public void start(Stage primaryStage) {
         Label label = new Label("Voer uw gegevens in!");
         Label naam = new Label("naam:");
@@ -25,7 +26,6 @@ public class BoekingenApp extends Application implements EventHandler<ActionEven
 
         Button resetBtn = new Button();
         resetBtn.setText("Reset");
-        resetBtn.setOnAction(this);
         Button boekBtn = new Button();
         boekBtn.setText("boek");
         HBox buttonBox = new HBox(10);
@@ -59,11 +59,6 @@ public class BoekingenApp extends Application implements EventHandler<ActionEven
         primaryStage.show();
 
     }
-
-    public void handle(ActionEvent event) {
-        System.out.println("Hello World!");
-    }
-
     public static void main(String[] args) {
         Application.launch(args);
     }

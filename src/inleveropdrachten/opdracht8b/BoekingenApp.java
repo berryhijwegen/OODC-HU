@@ -13,7 +13,7 @@ import javafx.geometry.Pos;
 
 import java.time.LocalDate;
 
-public class BoekingenApp extends Application implements EventHandler<ActionEvent>{
+public class BoekingenApp extends Application{
     private Hotel hotel = new Hotel("Avondrust");
     public void start(Stage primaryStage) {
         Label label = new Label("Voer uw gegevens in!");
@@ -30,7 +30,6 @@ public class BoekingenApp extends Application implements EventHandler<ActionEven
 
         Button resetBtn = new Button();
         resetBtn.setText("Reset");
-        resetBtn.setOnAction(this);
         Button boekBtn = new Button();
         boekBtn.setText("boek");
         HBox buttonBox = new HBox(10);
@@ -92,10 +91,15 @@ public class BoekingenApp extends Application implements EventHandler<ActionEven
                 else {
                     KamerType kamertype = (KamerType) kamertypeInput.getValue();
                     System.out.println(kamertype);
-                    System.out.println(hotel.voegBoekingToe(aankomstdatumInput.getValue(), vertrekdatumInput.getValue(), naamInput.getText(), adresInput.getText(), kamertype));
-                    label.setText("De boeking was succesvol!");
-                    label.setStyle("-fx-text-fill: black");
-                    System.out.println(hotel.toString());
+                    if(hotel.voegBoekingToe(aankomstdatumInput.getValue(), vertrekdatumInput.getValue(), naamInput.getText(), adresInput.getText(), kamertype) == -1){
+                        label.setText("Boeking niet succesvol!");
+                        label.setStyle("-fx-text-fill: red;");
+                    }
+                    else{
+                        label.setText("De boeking was succesvol!");
+                        label.setStyle("-fx-text-fill: black");
+                        System.out.println(hotel.toString());
+                    }
                 }
             }
         };
@@ -109,11 +113,6 @@ public class BoekingenApp extends Application implements EventHandler<ActionEven
         primaryStage.setResizable(false);
         primaryStage.show();
 
-    }
-
-
-    public void handle(ActionEvent event) {
-        System.out.println("Hello World!");
     }
 
     public static void main(String[] args) {

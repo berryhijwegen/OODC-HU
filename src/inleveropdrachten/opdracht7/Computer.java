@@ -31,6 +31,6 @@ public class Computer implements Goed{
     }
 
     public String toString(){
-        return String.format("Computer: %s heeft een waarde van: €%.2f", type, huidigeWaarde());
+        return String.format("Computer: %s heeft een waarde van: %s", type, Utils.euroBedrag(huidigeWaarde()));
     }
 }
